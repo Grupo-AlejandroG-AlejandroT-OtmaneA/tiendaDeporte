@@ -7,3 +7,5 @@ Pasos a seguir:
 4. Cada miembro creará una rama de desarrollo distinta con el nombre "rama-nombre del miembro del grupo"
 5. Se trabajará sobre esta rama
 6. Cada miembro se encargará de una clase distinta como se indica en la práctica
+
+Miembro editor --> Alejandro González De La Parra
