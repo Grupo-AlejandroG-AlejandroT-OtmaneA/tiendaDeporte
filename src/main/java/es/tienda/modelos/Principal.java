@@ -11,52 +11,75 @@ public class Principal {
         ArrayList<Proovedor> proveedores = new ArrayList<>();
         ArrayList<Articulo> articulos = new ArrayList<>();
 
-        String nombre, empresa, descripcion;
+        String nombre, apellidos, dni, codigo, descripcion;
         double precio;
 
-        System.out.println("=== INTRODUCIR CLIENTES ===");
+        // --- SECCIÓN CLIENTES (4) ---
+        System.out.println("=== INTRODUCIR DATOS DE 4 CLIENTES ===");
         for (int i = 0; i < 4; i++) {
-            System.out.print("Nombre del cliente: ");
+            System.out.println("\nCliente nº " + (i + 1));
+            System.out.print("Nombre: ");
             nombre = Entrada.cadena();
+            System.out.print("Apellidos: ");
+            apellidos = Entrada.cadena();
+            System.out.print("DNI: ");
+            dni = Entrada.cadena();
 
-            clientes.add(new Cliente(nombre)); // no reconoce Cliente()
+            Cliente nuevoCliente = new Cliente(nombre, apellidos, dni, TipoCliente.NUEVO);
+            clientes.add(nuevoCliente);
         }
 
-        System.out.println("\n=== INTRODUCIR PROVEEDORES ===");
+        // --- SECCIÓN PROVEEDORES (3) ---
+        System.out.println("\n=== INTRODUCIR DATOS DE 3 PROVEEDORES ===");
         for (int i = 0; i < 3; i++) {
-            System.out.print("Nombre del proveedor: ");
+            System.out.println("\nProveedor nº " + (i + 1));
+            System.out.print("Nombre: ");
             nombre = Entrada.cadena();
+            System.out.print("Apellidos: ");
+            apellidos = Entrada.cadena();
+            System.out.print("DNI: ");
+            dni = Entrada.cadena();
 
-            System.out.print("Empresa: ");
-            empresa = Entrada.cadena();
-
-            proveedores.add(new Proovedor(nombre, empresa)); // me pide 4 argumentos pero no se cuales son
+            Proovedor nuevoProv = new Proovedor(nombre, apellidos, dni, tipoProovedor.FABRICANTE);
+            proveedores.add(nuevoProv);
         }
 
-        System.out.println("\n=== INTRODUCIR ARTÍCULOS ===");
+        // --- SECCIÓN ARTÍCULOS (2) ---
+        System.out.println("\n=== INTRODUCIR DATOS DE 2 ARTÍCULOS ===");
         for (int i = 0; i < 2; i++) {
-            System.out.print("Descripción del artículo: ");
+            System.out.println("\nArtículo nº " + (i + 1));
+            System.out.print("Código: ");
+            codigo = Entrada.cadena();
+            System.out.print("Descripción: ");
             descripcion = Entrada.cadena();
-
             System.out.print("Precio: ");
             precio = Entrada.real();
 
-            articulos.add(new Articulo(descripcion, precio)); // no reconoce que es Articulo()
+            Articulo nuevoArt = new Articulo(codigo, descripcion, precio);
+            articulos.add(nuevoArt);
         }
 
-        System.out.println("\n=== LISTA DE CLIENTES ===");
-        for (Cliente cliente : clientes) {
-            System.out.println(cliente);
+        // --- VISUALIZACIÓN DE DATOS ---
+        System.out.println("\n\n************************************");
+        System.out.println("   RESUMEN DE DATOS INTRODUCIDOS");
+        System.out.println("************************************");
+
+        System.out.println("\n--- LISTA DE CLIENTES ---");
+        for (Cliente c : clientes) {
+            c.mostrarDatos();
+            System.out.println("-----------------------");
         }
 
-        System.out.println("\n=== LISTA DE PROVEEDORES ===");
-        for (Proovedor proveedor : proveedores) {
-            System.out.println(proveedor);
+        System.out.println("\n--- LISTA DE PROVEEDORES ---");
+        for (Proovedor p : proveedores) {
+            p.mostrarDatos();
+            System.out.println("-----------------------");
         }
 
-        System.out.println("\n=== LISTA DE ARTÍCULOS ===");
-        for (Articulo articulo : articulos) {
-            System.out.println(articulo);
+        System.out.println("\n--- LISTA DE ARTÍCULOS ---");
+        for (Articulo a : articulos) {
+            a.VisualizarDatos();
+            System.out.println("-----------------------");
         }
     }
 }
