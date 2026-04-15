@@ -9,3 +9,6 @@ Pasos a seguir:
 6. Cada miembro se encargará de una clase distinta como se indica en la práctica
 
 Otmane El Khalfaoui El Azzaby
+Sergio Caparros Soria
+Alejandro Gonzalez de la Parra
+Alejandro Tejedor Martinez
