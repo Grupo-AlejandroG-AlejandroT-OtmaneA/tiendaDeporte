@@ -2,34 +2,40 @@ package es.tienda.modelos;
 
 public class Cliente extends Persona {
 
-        private TipoCliente tipoCliente;
+    private TipoCliente tipoCliente;
 
-        public Cliente() {
-            super();
-        }
-
-    @Override
-    public void mostrarDatos() {
-
+    // Constructor vacío
+    public Cliente() {
+        super();
     }
 
-    public Cliente(String nombre, String dni, TipoCliente tipoCliente) {
-            super(nombre,dni);
-            this.tipoCliente = tipoCliente;
-        }
+    // Constructor con parámetros
+    public Cliente(String nombre, String apellidos, String dni, TipoCliente tipoCliente) {
+        super(nombre, apellidos, dni);
+        this.tipoCliente = tipoCliente;
+    }
 
-        public void darDeAlta() {
-            System.out.println("El cliente " + getNombre() + " con DNI " + getDni() + " ha sido dado de alta como " + tipoCliente);
-        }
+    // Getters y Setters
+    public TipoCliente getTipoCliente() {
+        return tipoCliente;
+    }
 
-        public TipoCliente getTipoCliente() {
-            return tipoCliente;
-        }
+    public void setTipoCliente(TipoCliente tipoCliente) {
+        this.tipoCliente = tipoCliente;
+    }
 
-        public void setTipoCliente(TipoCliente tipoCliente) {
-            this.tipoCliente = tipoCliente;
-        }
+    // Método obligatorio de Persona
+    @Override
+    public void mostrarDatos() {
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Apellidos: " + getApellidos());
+        System.out.println("DNI: " + getDni());
+        System.out.println("Tipo de cliente: " + tipoCliente);
+    }
 
-
-
+    // Método para dar de alta un cliente
+    public void altaCliente() {
+        System.out.println("Cliente dado de alta:");
+        mostrarDatos();
+    }
 }
