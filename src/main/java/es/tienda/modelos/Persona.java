@@ -9,7 +9,7 @@ public abstract class Persona {
     private String dni;
 
     public Persona(String number, String apellidos, String dni) {
-        this.number = number;
+        this.nombre = number;
         this.apellidos = apellidos;
         this.dni = dni;
     }
@@ -22,8 +22,8 @@ public abstract class Persona {
     }
 
     // Getters y Setters
-    public String getNombre() { return number; }
-    public void setNombre(String nombre) { this.number = nombre; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
     public String getApellidos() { return apellidos; }
     public void setApellidos(String apellidos) { this.apellidos = apellidos; }
